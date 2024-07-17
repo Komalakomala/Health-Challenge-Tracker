@@ -1,0 +1,7 @@
+<form (ngSubmit)="addWorkout()">
+    <input type="text" placeholder="User name" [(ngModel)]="userName" required>
+    <input type="text" placeholder="Workout Type" [(ngModel)]="workoutType" required>
+    <input type="number" placeholder="Workout minutes" [(ngModel)]="workoutMinutes" required>
+    <button type="submit">Add Workout</button>
+  </form>
+  

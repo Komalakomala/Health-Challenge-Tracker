@@ -1,0 +1,18 @@
+<div>
+    <input type="text" placeholder="Search by name" [(ngModel)]="searchName">
+    <select [(ngModel)]="filterType">
+      <option value="">All Types</option>
+      <option *ngFor="let type of workoutService.getWorkoutTypes()" [value]="type">{{ type }}</option>
+    </select>
+  </div>
+  <ul>
+    <li *ngFor="let workout of filteredWorkouts">
+      {{ workout.userName }} - {{ workout.workoutType }} ({{ workout.workoutMinutes }} minutes)
+    </li>
+  </ul>
+  <div>
+    <button [disabled]="currentPage === 1" (click)="prevPage()">Previous</button>
+    <span>{{ currentPage }}</span>
+    <button [disabled]="currentPage === totalPages" (click)="nextPage()">Next</button>
+  </div>
+  
